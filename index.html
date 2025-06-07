@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công ty TNHH Đầu Tư Lộc Du  Insurance - Công ty TNHH Đầu Tư Lộc Du  Recruitment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #8a8b8e;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        /* Sticky Header - Phiên bản nhỏ gọn */
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.97); /* Tăng độ đục để rõ hơn */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08); /* Shadow nhẹ hơn */
+            padding: 4px 0; /* Giảm padding đáng kể */
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            height: 61px; /* Chiều cao cố định nhỏ */
+        }
+        
+        .sticky-header.visible {
+            transform: translateY(0);
+        }
+        
+        .sticky-header .logo {
+            width: 35px; /* Giảm kích thước logo xuống đáng kể */
+            height: auto;
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-header .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .sticky-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        
+        /* Menu trong sticky header */
+        .sticky-menu {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .sticky-menu li {
+            margin-left: 15px;
+        }
+        
+        .sticky-menu a {
+            color: #333;
+            font-size: 12px; /* Font size nhỏ hơn */
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 2px 0;
+            position: relative;
+        }
+        
+        .sticky-menu a:hover {
+            color: #ff6600;
+        }
+        
+        .sticky-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px; /* Gạch chân mỏng hơn */
+            background: #ff6600;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .sticky-menu a:hover:after {
+            width: 100%;
+        }
+        
+        /* Responsive styling cho các thiết bị */
+        @media (max-width: 992px) {
+            .sticky-header {
+                height: 54px;
+            }
+            
+            .sticky-header .container {
+                padding: 0 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-header {
+                height: 32px;
+                padding: 3px 0;
+            }
+            
+            .sticky-header .logo {
+                width: 30px; /* Logo nhỏ hơn trên mobile */
+            }
+            
+            .sticky-menu {
+                display: none; /* Ẩn menu trên mobile */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sticky-header {
+                height: 28px;
+                padding: 2px 0;
+            }
+            
+            .sticky-header .logo {
+                width: 25px; /* Logo nhỏ nhất */
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff6600;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #ff6600;
+            transform: translateY(-5px);
+        }
+        .social-button i {
+            font-size: 18px;
+            color: white;
+        }
+
+        .social-button-link {
+            text-decoration: none;
+        }
+        /* Header Section */
+        .hero-section {
+            background-image: url('./assets/images/img__4.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 700px;
+            position: relative;
+            padding: 50px 0;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+        .hero-tagline {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px; /* Giới hạn chiều cao */
+        }
+        
+        .hero-description {
+            margin-top: 20px;
+            font-size: 13px;
+            line-height: 21px;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-description:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .red-line {
+            width: 129px;
+            height: 6px;
+            background-color: #c95c47;
+            margin: 20px 0;
+        }
+        
+        .red-rectangle {
+            width: 57px;
+            height: 18px;
+            background-color: #ff6600;
+            margin-top: 20px;
+        }
+        
+        .dark-red-rectangle {
+            width: 72px;
+            height: 12px;
+            background-color: #6e252f;
+            position: absolute;
+            top: 311px;
+            right: 15%;
+        }
+        
+        .banner-element {
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .banner-element-1 {
+            top: 109px;
+            right: 30%;
+            width: 28px;
+            height: 28px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .banner-element-2 {
+            top: 122px;
+            right: 25%;
+            width: 72px;
+            height: 72px;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .banner-element-3 {
+            top: 253px;
+            right: 15%;
+            width: 49px;
+            height: 49px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .banner-element-4 {
+            top: 44px;
+            right: 5%;
+            width: 98px;
+            height: 98px;
+            animation: float 7s ease-in-out infinite;
+        }
+        
+        .social-buttons {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ff6600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .social-button:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .social-button img {
+            filter: brightness(0) invert(1);
+            width: 18px; /* Kích thước icon phù hợp hơn */
+            height: auto;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Phần grid mới ở đầu trang */
+        .feature-grid {
+            padding: 50px 0;
+            background-color: #ffffff;
+        }
+        
+        .feature-grid .row {
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .feature-icon {
+            width: 50px; /* Giảm kích thước */
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 19px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item-text {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+        }
+        
+        /* Generation Section */
+        .generation-section {
+            padding: 80px 0 50px;
+            position: relative;
+            background-color: #ffffff;
+        }
+        
+        .section-heading {
+            margin-bottom: 40px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .generation-image {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .generation-title-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px; /* Giới hạn chiều cao */
+        }
+        
+        .decoration-element {
+            position: absolute;
+        }
+        
+        .decoration-element-1 {
+            top: 50px;
+            left: 10%;
+            width: 48px;
+            height: 43px;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .decoration-element-2 {
+            top: 180px;
+            left: 30%;
+            width: 17px;
+            height: 15px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .generation-paragraph {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .generation-paragraph:hover {
+            transform: translateX(5px);
+        }
+        
+        .red-label {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 17px;
+            padding: 4px 10px;
+            margin-right: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .red-label:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(197, 40, 28, 0.3);
+        }
+        
+        /* E-Factor Section */
+        .e-factor-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .e-factor-title {
+            margin-bottom: 30px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .e-factor-description {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+        }
+        
+        .extra-mile {
+            display: inline-block;
+            background-color: #ff6600;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13px;
+            line-height: 16px;
+            padding: 4px 10px;
+            margin: 0 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .extra-mile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(197, 40, 28, 0.3);
+        }
+        
+        /* E-Qualities Section */
+        .e-qualities-section {
+            padding: 0;
+            text-align: center;
+        }
+        
+        .e-qualities-title {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        
+        .e-qualities-image {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-height: 350px; /* Giới hạn chiều cao */
+            transition: all 0.5s ease;
+        }
+        
+        .e-qualities-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* VEP Section */
+        .vep-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .vep-title {
+            margin-bottom: 30px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .vep-description {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+        }
+        
+        .vep-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 350px; /* Giới hạn chiều cao */
+            transition: all 0.5s ease;
+        }
+        
+        .vep-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background-color: #ff6600;
+            padding: 64px 0;
+            color: #ffffff;
+        }
+        
+        .benefits-title {
+            margin-bottom: 30px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .benefits-description {
+            font-size: 14px;
+            line-height: 21px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+        
+        .benefit-card {
+            background-color: #ffffff;
+            padding: 24px;
+            box-shadow: 0px 0px 25px rgba(129, 20, 22, 0.15);
+            text-align: center;
+            height: 100%;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(129, 20, 22, 0.25);
+        }
+        
+        .benefit-icon {
+            width: 60px; /* Giảm kích thước */
+            height: auto;
+            margin: 0 auto 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .benefit-title {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-text {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+            text-align: center;
+        }
+        
+        /* Experience Section */
+        .experience-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+        
+        .experience-title {
+            margin-bottom: 30px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .experience-description {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+            margin-bottom: 40px;
+        }
+        
+        /* Properly styled Bootstrap carousel */
+        .experience-carousel {
+            margin-bottom: 50px;
+        }
+        
+        .carousel-item {
+            text-align: center;
+        }
+        
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            max-height: 250px; /* Giới hạn chiều cao */
+            transition: all 0.5s ease;
+        }
+        
+        .carousel-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background-color: #ff6600;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: #ff6600;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-control-prev {
+            left: 10px;
+        }
+        
+        .carousel-control-next {
+            right: 10px;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .experience-item {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .experience-item:hover {
+            transform: scale(1.05);
+            background-color: #f9f9f9;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .experience-icon {
+            width: 50px; /* Giảm kích thước */
+            height: auto;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-item:hover .experience-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .experience-item-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 19px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item-text {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+        }
+        
+        /* Citizen Section */
+        .citizen-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .citizen-title {
+            margin-bottom: 60px;
+            max-width: 280px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .citizen-card {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .citizen-card:hover {
+            transform: translateY(-10px);
+            background-color: #ffffff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .citizen-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 180px; /* Giới hạn chiều cao */
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .citizen-card:hover .citizen-image {
+            transform: scale(1.05);
+        }
+        
+        .citizen-text {
+            font-size: 14px;
+            line-height: 21px;
+            color: #8a8b8e;
+        }
+        
+        .apply-btn {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .apply-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+        
+        .apply-btn:hover {
+            background-color: #ff6600;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(166, 31, 21, 0.3);
+        }
+        
+        .apply-btn:hover:before {
+            left: 100%;
+        }
+        
+        /* Company Section */
+        .company-section {
+            background-image: url('./assets/images/img__1.png');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .company-title {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ff6600;
+            margin-bottom: 40px;
+        }
+        
+        .company-subtitle {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 24px;
+            color: #8a8b8e;
+            margin-bottom: 20px;
+        }
+        
+        .company-text {
+            font-size: 16px;
+            line-height: 24px;
+            color: #8a8b8e;
+            margin-bottom: 20px;
+        }
+        
+        .company-list {
+            list-style: none;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .company-list-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 24px;
+            color: #8a8b8e;
+            transition: all 0.3s ease;
+        }
+        
+        .company-list-item:hover {
+            transform: translateX(5px);
+            color: #ff6600;
+        }
+        
+        .company-list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff6600;
+        }
+        
+        .company-paragraph {
+            font-size: 16px;
+            line-height: 24px;
+            color: #8a8b8e;
+            margin-bottom: 20px;
+        }
+        
+        .company-carousel .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .company-carousel .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .company-carousel .carousel-indicators button:hover {
+            background-color: #ff6600;
+        }
+        
+        .company-carousel .carousel-indicators button.active {
+            background-color: #ff6600;
+            transform: scale(1.2);
+        }
+        
+        .contact-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 67px;
+        }
+        
+        /* Contact Section - Made Smaller */
+        .contact-section {
+            background-image: url('./assets/images/img__2.png');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 0; /* Giảm padding */
+            position: relative;
+            min-height: 250px; /* Giảm chiều cao tối thiểu */
+        }
+        
+        .contact-title {
+            margin-bottom: 30px; /* Giảm margin */
+            max-width: 250px; /* Giới hạn chiều rộng */
+            height: auto;
+        }
+        
+        .contact-form-container {
+            position: relative;
+            margin-bottom: 40px; /* Giảm margin */
+        }
+        
+        .contact-form {
+            background-color: #ffffff;
+            padding: 15px; /* Giảm padding */
+            box-shadow: 0px 0px 30px rgba(129, 20, 22, 0.15);
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 40px rgba(129, 20, 22, 0.25);
+        }
+        
+        .paper-plane {
+            position: absolute;
+            bottom: -50px; /* Thay đổi vị trí từ top sang bottom */
+            right: 20px; /* Đặt ở bên phải form */
+            width: 60px; /* Giảm kích thước cố định */
+            height: auto;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .form-control {
+            height: calc(2.3rem + 2px); /* Giảm chiều cao input */
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #ff6600;
+            box-shadow: 0 0 0 0.2rem rgba(197, 40, 28, 0.25);
+        }
+        
+        .submit-btn {
+            background-color: #ff6600;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px; /* Giảm padding */
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            height: calc(2.3rem + 2px); /* Điều chỉnh chiều cao nút */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #ff6600;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(166, 31, 21, 0.3);
+        }
+        
+        .submit-btn:hover:before {
+            left: 100%;
+        }
+        /* Animation effects */
+        [data-aos] {
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+
+        /* Tùy chỉnh thêm cho các phần tử cụ thể */
+        .benefit-card[data-aos], 
+        .experience-item[data-aos], 
+        .citizen-card[data-aos] {
+            transform: translateY(20px);
+        }
+
+        .benefit-card[data-aos].aos-animate, 
+        .experience-item[data-aos].aos-animate, 
+        .citizen-card[data-aos].aos-animate {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            [data-aos-delay] {
+                transition-delay: 0s !important; /* Loại bỏ delay trên mobile */
+            }
+        }
+        /* Responsive media queries */
+        @media (max-width: 992px) {
+            .hero-section {
+                min-height: 600px;
+            }
+            
+            .section-heading,
+            .e-factor-title,
+            .vep-title,
+            .benefits-title,
+            .experience-title,
+            .citizen-title,
+            .contact-title {
+                max-width: 240px; /* Giảm kích thước trên tablet */
+            }
+            
+            .company-title {
+                font-size: 28px;
+                line-height: 34px;
+            }
+            
+            .dark-red-rectangle,
+            .banner-element {
+                display: none;
+            }
+            
+            .paper-plane {
+                width: 50px;
+                bottom: -40px;
+            }
+            
+            /* Adjust sticky header on tablet */
+            .sticky-header .container {
+                padding: 0 15px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 500px;
+            }
+            
+            .social-buttons {
+                justify-content: center;
+                margin-top: 50px;
+            }
+            
+            .section-heading,
+            .e-factor-title,
+            .vep-title,
+            .benefits-title,
+            .experience-title,
+            .citizen-title,
+            .contact-title {
+                max-width: 200px; /* Giảm kích thước trên mobile */
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .company-title {
+                font-size: 24px;
+                line-height: 30px;
+            }
+            
+            .company-subtitle,
+            .company-text,
+            .company-list-item,
+            .company-paragraph {
+                font-size: 14px;
+            }
+            
+            .benefit-icon,
+            .experience-icon {
+                width: 40px; /* Giảm kích thước trên mobile */
+            }
+            
+            .paper-plane {
+                width: 40px;
+                bottom: -30px;
+                right: 15px;
+            }
+            
+            .e-qualities-image,
+            .vep-image {
+                margin-top: 30px;
+            }
+            
+            .contact-section {
+                padding: 40px 0;
+                min-height: 200px;
+            }
+            
+            .sticky-header .logo {
+                width: 30px; /* Đã điều chỉnh để phù hợp với kích thước sticky header nhỏ gọn */
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+                font-size: 18px;
+            }
+            
+            /* Make form stack vertically on mobile */
+            .contact-form .row {
+                flex-direction: column;
+            }
+            
+            .contact-form .col-md-4,
+            .contact-form .col-md-3,
+            .contact-form .col-md-2 {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 20px 0;
+            }
+            
+            .logo {
+                margin: 0 auto 20px;
+                display: block;
+                width: 100px; /* Giảm kích thước logo trên mobile */
+            }
+            
+            .red-line,
+            .red-rectangle {
+                margin: 15px auto;
+            }
+            
+            .company-title {
+                font-size: 20px;
+                line-height: 26px;
+            }
+            
+            .paper-plane {
+                width: 30px;
+                bottom: -20px;
+                right: 10px;
+            }
+            
+            .submit-btn {
+                margin-top: 5px;
+            }
+            
+            .sticky-header {
+                padding: 2px 0;
+                height: 28px;
+            }
+            
+            .sticky-header .logo {
+                width: 25px; /* Logo nhỏ nhất trên điện thoại nhỏ */
+            }
+        }
+                /* Modal Popup Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-container {
+            background-color: #fff;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-30px);
+            transition: all 0.4s ease;
+        }
+        
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            color: #ff6600;
+            cursor: pointer;
+            z-index: 10;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background-color: rgba(197, 40, 28, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .ct-ungtuyen {
+            padding: 30px;
+        }
+        
+        .ct-ungtuyen img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .ct-ungtuyen .copy h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff6600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .ct-ungtuyen .copy h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ff6600;
+        }
+        
+        .ct-ungtuyen .copy p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .ct-ungtuyen {
+                padding: 20px;
+            }
+            
+            .ct-ungtuyen .copy h2 {
+                font-size: 20px;
+            }
+            
+            .ct-ungtuyen .copy p {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <a href="#" class="logo"><img src="./assets/images/img_logopng.png" alt="Generali Logo" style="width: 80px;"></a>
+                <ul class="sticky-menu">
+
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Header Section -->
+    <section id="top" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img_logopng.png" alt="Generali Logo" class="logo">
+                    <div class="red-line"></div>
+                    <img src="./assets/images/img_heading_2_taglinepng.png" alt="Become the next GENERATION of insurance experts" class="hero-tagline img-fluid">
+                    
+                    <div class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                        <p>Chúng tôi tin rằng, để thành công trong bất kỳ lĩnh vực nào, chúng ta cần có một lựa chọn rõ ràng, thực sự dấn thân và dành thời gian đủ nhiều với nó, có vững chuyên môn và trở thành một "chuyên gia" của chính lựa chọn đấy.</p>
+                    </div>
+                    <div class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                        <p>Chúng tôi định nghĩa Công ty TNHH Đầu Tư Lộc Du  là "The Next Generation of Insurance Experts"</p>
+                    </div>
+                    <div class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                        <p>Những người trẻ có cùng chí hướng định nghĩa lại hình ảnh Chuyên viên Tư vấn Tài chính trong lĩnh vực Bảo hiểm Nhân thọ đầy tiềm năng</p>
+                    </div>
+                    
+                    <div class="social-buttons" data-aos="fade-up" data-aos-delay="500">
+                        <a href="https://www.instagram.com/gahcm8/" target="_blank" class="social-button-link">
+                            <div class="social-button">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@locdugroup_gahcm8" target="_blank" class="social-button-link">
+                            <div class="social-button">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="red-rectangle d-none d-md-block" data-aos="fade-in" data-aos-delay="600"></div>
+        <div class="dark-red-rectangle d-none d-lg-block" data-aos="fade-in" data-aos-delay="700"></div>
+        <img src="./assets/images/img_bannerele1png.png" alt="" class="banner-element banner-element-1 d-none d-lg-block">
+        <img src="./assets/images/img_bannerele2png.png" alt="" class="banner-element banner-element-2 d-none d-lg-block">
+        <img src="./assets/images/img_bannerele3png.png" alt="" class="banner-element banner-element-3 d-none d-lg-block">
+        <img src="./assets/images/img_bannerele4png.png" alt="" class="banner-element banner-element-4 d-none d-lg-block">
+    </section>    
+    <!-- Generation Section -->
+    <section class="generation-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="generation-image">
+                        <img src="./assets/images/img_heading_2_title1png.png" alt="Rewrite the Generation" class="section-heading img-fluid" data-aos="fade-down" data-aos-duration="800">
+                        <img src="./assets/images/img_imgitem1png.png" alt="Generation" class="generation-title-image img-fluid">
+                        <img src="./assets/images/img_item1ele1png.png" alt="" class="decoration-element decoration-element-1 d-none d-lg-block">
+                        <img src="./assets/images/img_item1ele2png.png" alt="" class="decoration-element decoration-element-2 d-none d-lg-block">
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="generation-content">
+                        <div class="generation-paragraph">
+                            <p>Chúng ta thường nghĩ thành công và sự nghiệp phải được bắt nguồn từ đam mê. Tìm được đam mê trước, rồi mới có thể phát triển sự nghiệp và đạt được thành công.</p>
+                        </div>
+                        <div class="generation-paragraph">
+                            <p>Tuy nhiên, mất bao lâu để có thể tìm thấy được đam mê và bao nhiêu người thật sự tìm ra được niềm đam mê của mình?</p>
+                        </div>
+                        <div class="generation-paragraph">
+                            <p>Tuổi trẻ liệu có đủ dài để đợi niềm đam mê đến rồi mới bắt đầu tìm cho mình một lối đi, một con đường và một sự nghiệp, để rồi chạm đến thành công?</p>
+                        </div>
+                        <div class="generation-paragraph">
+                            <p>Có một điều mà dường như chúng ta thường hay bỏ quên. Trước khi "đam mê" được tìm thấy và để bắt đầu có thể "đam mê" làm bất cứ điều gì, yếu tố tiên quyết chính là "Sự dấn thân".</p>
+                        </div>
+                        <div class="generation-paragraph">
+                            <p><span class="red-label">Chúng tôi – Công ty TNHH Đầu Tư Lộc Du </span> muốn truyền cảm hứng để những người trẻ có thể dám dấn thân, dám gắn bó và có thể phát triển lâu dài trên hành trình tư vấn hoạch định tài chính - bảo hiểm, từ đó tạo ra những tác động tích cực đến xã hội.</p>
+                        </div>
+                        <div class="generation-paragraph">
+                            <p>Bắt đầu từ đây, chính bạn sẽ là người tự tay viết nên câu chuyện Thành Công và Sự Nghiệp của mình.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- E-Factor Section kết hợp với E-Qualities Section -->
+    <section class="e-factor-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img_heading_2_title2png.png" alt="E-Factor" class="e-factor-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                    <div class="e-factor-description">
+                        <p>Công ty TNHH Đầu Tư Lộc Du  – Lựa chọn hàng đầu cho những cá nhân muốn phát triển sự nghiệp trong lĩnh vực Tư vấn Tài Chính - Bảo Hiểm</p>
+                        <p class="mt-3">Tại Công ty TNHH Đầu Tư Lộc Du, bạn được trao cơ hội và sự hỗ trợ để khám phá và phát huy những Nhân Tố E trong mình, tiến xa trên con đường phát triển bản thân và sự nghiệp <span class="extra-mile">Go the EXTRA mile</span>, để trở nên vượt trội và khác biệt <span class="extra-mile">to be EXTRAordinary</span></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 e-qualities-section" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <h2 class="e-qualities-title">Bạn đang sở hữu trong mình nhân tố E nào?</h2>
+                    <img src="./assets/images/img_imgitem3png.png" alt="E Qualities" class="e-qualities-image img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- VEP Section kết hợp với ảnh img-item-4.png -->
+    <section class="vep-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img-item-4.png" alt="VEP Image" class="vep-image img-fluid" data-aos="zoom-in" data-aos-delay="200">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="./assets/images/img_heading_2_title3png.png" alt="Very Excellent Person" class="vep-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                    <div class="vep-description" data-aos="fade-up" data-aos-delay="300">
+                        <p>Hành trình phát triển và duy trì nhân tố E của bạn. Tại Công ty TNHH Đầu Tư Lộc Du, chúng tôi luôn ghi nhận những nỗ lực của chính bạn, trao quyền cho bạn để cùng bạn chạm đến thành công với lộ trình rõ ràng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img_heading_2_title4png.png" alt="E-Benefits" class="benefits-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                    <div class="benefits-description" data-aos="fade-up" data-aos-delay="200">
+                        <p>Gia nhập đội ngũ Công ty TNHH Đầu Tư Lộc Du, bạn sẽ được phát triển bản thân mình và nhận về những giá trị tưởng thưởng xứng đáng!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row benefits-row">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="benefit-card" id="benefit-card-1">
+                        <div class="benefit-icon-wrapper">
+                            <img src="./assets/images/img_icoben1png.png" alt="Earnings" class="benefit-icon">
+                        </div>
+                        <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="300">Earnings</h3>
+                        <p class="benefit-text" data-aos="fade-up" data-aos-delay="400">
+                            Công ty TNHH Đầu Tư Lộc Du, sự quyết tâm của bạn cộng hưởng với hệ sinh thái hỗ trợ của Công ty TNHH Đầu Tư Lộc Du sẽ mang đến cho bạn sự tưởng thưởng xứng đáng: <strong>SỰ NGHIỆP</strong> phát triển và tự do <strong>TÀI CHÍNH</strong>.
+                        </p>
+                        <p class="benefit-text" data-aos="fade-up" data-aos-delay="500">
+                            Lương hỗ trợ hàng tháng cùng các khoản thưởng tháng, quý, năm không giới hạn. Ngoài ra còn có bảo hiểm sức khỏe cho cá nhân & người thân.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <div class="benefit-card" id="benefit-card-2">
+                        <div class="benefit-icon-wrapper">
+                            <img src="./assets/images/img_icoben2png.png" alt="Evolution" class="benefit-icon">
+                        </div>
+                        <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="300">Evolution</h3>
+                        <p class="benefit-text" data-aos="fade-up" data-aos-delay="400">
+                            Ai cũng có khao khát chính đáng là khẳng định giá trị của bản thân. Công ty TNHH Đầu Tư Lộc Du, chúng tôi mang đến cho bạn lộ trình huấn luyện sát sao, sự tư vấn chuyên môn và kỹ năng đặc biệt; cam kết hỗ trợ giúp bạn ngày càng hoàn thiện bản thân mình, xây dựng và phát triển thương hiệu cá nhân vượt trội.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                    <div class="benefit-card" id="benefit-card-3">
+                        <div class="benefit-icon-wrapper">
+                            <img src="./assets/images/img_icoben3png.png" alt="Empowerment" class="benefit-icon">
+                        </div>
+                        <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="300">Empowerment</h3>
+                        <p class="benefit-text" data-aos="fade-up" data-aos-delay="400">
+                            Được trao quyền để thành công,  chúng tôi xây dựng văn hóa <br> Công ty TNHH Đầu Tư Lộc Du dựa trên giá trị cốt lõi là sự Tin tưởng. Ở đây, bạn được trao quyền để thỏa sức sáng tạo, chia sẻ ý kiến, chủ động thực thi thay đổi, cùng nhau biến đam mê và mục tiêu trở thành hiện thực.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                    <div class="benefit-card" id="benefit-card-4">
+                        <div class="benefit-icon-wrapper">
+                            <img src="./assets/images/img_icoben4png.png" alt="Enjoyment" class="benefit-icon">
+                        </div>
+                        <h3 class="benefit-title" data-aos="fade-up" data-aos-delay="300">Enjoyment</h3>
+                        <p class="benefit-text" data-aos="fade-up" data-aos-delay="400">
+                            Với Công ty TNHH Đầu Tư Lộc Du, mỗi ngày là một niềm vui. Chúng tôi tạo ra một môi trường làm việc chuyên nghiệp, trẻ trung. Công ty TNHH Đầu Tư Lộc Du lắng nghe và trân trọng những sáng kiến được tạo ra và thực thi mỗi ngày. Cơ hội khám phá bản thân, tạo dựng những mối quan hệ mới, học hỏi những điều hay mới mẻ, chu du đến nhiều địa danh trong và ngoài nước là không giới hạn với <br>Công ty TNHH Đầu Tư Lộc Du.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Thêm hiệu ứng particles ở background -->
+            <div class="benefits-particles" id="benefits-particles"></div>
+        </div>
+    </section>    
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="./assets/images/img_heading_2_title5png.png" alt="Experience" class="experience-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                    <div class="experience-description" data-aos="fade-up" data-aos-delay="200">
+                        <p><span class="red-label">Công ty TNHH Đầu Tư Lộc Du  – Hơn cả một công việc</span></p>
+                        <p>E-Experience: Nơi đem lại một hệ sinh thái trải nghiệm để bạn tự do tận hưởng "Hành trình sự nghiệp" của mình. Là chất liệu để bạn tự viết nên định nghĩa về thành công.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bootstrap Carousel -->
+            <div id="experienceCarousel" class="carousel slide experience-carousel" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1200">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_experience19png.png" alt="Experience" class="img-fluid">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_option_experience1png.png" alt="Experience Option" class="img-fluid">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_option_experience2png.png" alt="Experience Option" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_option_experience2png.png" alt="Experience" class="img-fluid">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_experience19png.png" alt="Experience Option" class="img-fluid">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="./assets/images/img_option_experience1png.png" alt="Experience Option" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex1png.png" alt="E-Home" class="experience-icon">
+                        <h3 class="experience-item-title">E-Home</h3>
+                        <p class="experience-item-text">Môi trường làm việc chuyên nghiệp, thoải mái, sáng tạo, riêng biệt chỉ có tại Công ty TNHH Đầu Tư Lộc Du  - khác biệt với những kênh phân phối khác</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex2png.png" alt="E-Voice" class="experience-icon">
+                        <h3 class="experience-item-title">E-Voice</h3>
+                        <p class="experience-item-text">Luôn luôn lắng nghe những nguyện vọng, để xuất, ý tưởng , sáng kiến của các thành viên </p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex3png.png" alt="E-Coaching" class="experience-icon">
+                        <h3 class="experience-item-title">E-Coaching</h3>
+                        <p class="experience-item-text">Lộ trình đào tạo chuyên nghiệp và theo dõi sát sao, kỹ lưỡng , đảm bảo Công ty TNHH Đầu Tư Lộc Du có 1 nền kiến thức & kỹ năng tốt nhất</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex4png.png" alt="E-Business" class="experience-icon">
+                        <h3 class="experience-item-title">E-Business</h3>
+                        <p class="experience-item-text">Tạo điều kiện thuận lợi và nhiều sự động viên, hỗ trợ đặc biệt cho công việc kinh doanh</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex5png.png" alt="E-Quipment" class="experience-icon">
+                        <h3 class="experience-item-title">E-Quipment</h3>
+                        <p class="experience-item-text">Hỗ trợ công nghệ phục vụ hoạt động kinh doanh</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex6png.png" alt="E-Brand" class="experience-icon">
+                        <h3 class="experience-item-title">E-Brand</h3>
+                        <p class="experience-item-text">Xây dựng hình ảnh chuyên nghiệp cho Công ty TNHH Đầu Tư Lộc Du và giúp quảng bá thương hiệu cá nhân hiệu quả</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex7png.png" alt="E-Outing" class="experience-icon">
+                        <h3 class="experience-item-title">E-Outing</h3>
+                        <p class="experience-item-text">Chương trình dã ngoại dành riêng cho Công ty TNHH Đầu Tư Lộc Du để tạo sự gắn kết</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100">
+                    <div class="experience-item">
+                        <img src="./assets/images/img_icoex8png.png" alt="E-Lookbook" class="experience-icon">
+                        <h3 class="experience-item-title">E-Lookbook</h3>
+                        <p class="experience-item-text">Xây dựng tinh thần phong phú của Công ty TNHH Đầu Tư Lộc Du trong E-Home</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Citizen Section -->
+    <section class="citizen-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img_heading_2_title6png.png" alt="Be Công ty TNHH Đầu Tư Lộc Du  Citizen" class="citizen-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100"">
+                    <div class="citizen-card">
+                        <img src="./assets/images/img_eti1png.png" alt="Citizen" class="citizen-image img-fluid">
+                        <p class="citizen-text">Kiên trì vun vén mối quan hệ với những khách hàng tiềm năng và tích cực phát triển các mối quan hệ mới.</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="citizen-card">
+                        <img src="./assets/images/img_eti2png.png" alt="Citizen" class="citizen-image img-fluid">
+                        <p class="citizen-text">Tư vấn cho Khách hàng những giải pháp hoạch định tài chính phù hợp nhất, bằng tất cả sự chuyên nghiệp và chân thành.</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-3">
+                    <div class="citizen-card">
+                        <img src="./assets/images/img_eti3png.png" alt="Citizen" class="citizen-image img-fluid">
+                        <p class="citizen-text">Đồng hành cùng với Khách hàng của mình với tất cả sự tận tâm, mang đến cho họ những trải nghiệm dịch vụ xuất sắc</p>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="citizen-card">
+                        <img src="./assets/images/img_eti4png.png" alt="Citizen" class="citizen-image img-fluid">
+                        <p class="citizen-text">Chia sẻ những kiến thức về hoạch định tài chính, ý nghĩa của Bảo hiểm nhân thọ với tinh thần nhiệt huyết, đam mê</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    <button class="apply-btn">Điều kiện ứng tuyển</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Company Section -->
+    <section class="company-section">
+        <div class="container">
+            <h2 class="company-title" data-aos="fade-down" data-aos-duration="800">HANWHA LIFE VIỆT NAM VÀ CÔNG TY TNHH ĐẦU TƯ LỘC DU  </h2>
+            
+            <!-- Bootstrap Carousel for Company Info -->
+            <div id="companyCarousel" class="carousel slide company-carousel" data-bs-ride="carousel" data-bs-interval="7000" data-aos="fade-up" data-aos-duration="1200">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2" data-aos="fade-up" data-aos-delay="100">
+                                <h3 class="company-subtitle">A. Tập đoàn Hanwha lịch sử lâu đời:</h3>
+                                <p class="company-text">Hanwha Life Việt Nam là Tập đoàn Bảo hiểm và quản lí tài sản Hàn Quốc hàng đầu thế giới với bề dày lịch sử đáng tự hào</p>
+                                
+                                <ul class="company-list">
+                                    <li class="company-list-item">Tập đoàn Hanwha - một trong 7 Tập đoàn lớn nhất Hàn Quốc(*), đồng thời nằm trong Top 500</li>
+                                    <li class="company-list-item">Tập đoàn kinh tế lớn nhất thế giới(**) và Top 100 Doanh nghiệp có tầm ảnh hưởng lớn nhất thế giới năm 2024(***) với tổng tài sản hơn 181 tỷ đô la Mỹ</li>
+                                    <li class="company-list-item">Hanwha hiện đang có danh mục hoạt động kinh doanh đa dạng với 4 mảng chính: Năng lượng sạch và giải pháp hàng hải, Hàng không vũ trụ và cơ điện tử; Tài chính; Bán lẻ và Dịch vụ cùng mạng lưới hơn 776 thành viên trên toàn cầu.</li>
+                                    <li class="company-list-item">Tại Việt Nam, Hanwha đã đầu tư gần 2 tỷ đô la Mỹ, tạo hơn 50.000 việc làm cho người lao động với các lĩnh vực đầu tư đa dạng</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2" data-aos="fade-up" data-aos-delay="100">
+                                <h3 class="company-subtitle">B. Hanwha Life Việt Nam  :</h3>
+                                <p class="company-paragraph">Tính đến cuối năm 2024, công ty có hơn 1.100.000 khách hàng tin tưởng và giao phó trọng trách bảo vệ bản thân và gia đình. Cùng đội ngũ hơn 500 nhân viên và 38.800 tư vấn tài chính với hơn 125 điểm phục vụ khách hàng trên cả nước</p>
+                                <p class="company-paragraph">Hanwha Life luôn nỗ lực mang đến những giá trị tốt nhất cho khách hàng, cộng đồng, xã hội, góp phần xây dựng thị trường bảo hiểm nhân thọ Việt Nam lành mạnh, bền vững và minh bạch.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2" data-aos="fade-up" data-aos-delay="100">
+                                <h3 class="company-subtitle">C. Công ty TNHH Đầu Tư Lộc Du  - Tương lai của bạn:</h3>
+                                <p class="company-paragraph">Gia nhập Công ty TNHH Đầu Tư Lộc Du, bạn sẽ được đào tạo bởi những chuyên gia hàng đầu, tiếp cận công nghệ hiện đại và nhận được sự hỗ trợ toàn diện để xây dựng sự nghiệp vững chắc trong ngành tài chính bảo hiểm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#companyCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#companyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#companyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="./assets/images/img_heading_2_title7png.png" alt="Prepare to be Lộc Du" class="contact-title img-fluid" data-aos="fade-down" data-aos-duration="800">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="contact-form-container">
+                        <div class="contact-form">
+                            <!-- Form sử dụng FormSubmit để gửi email -->
+                            <form class="row g-3" action="https://formsubmit.co/hcm8.hanwhalife@gmail.com" method="POST">
+                                <!-- Trường ẩn để cấu hình FormSubmit -->
+                                <input type="hidden" name="_subject" value="Đăng ký mới từ Công ty TNHH Đầu Tư Lộc Du ">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_next" value="https://nhat-dark-it.github.io/locdu.vn/thank-you.html">
+                                
+                                <div class="col-md-4">
+                                    <input type="text" name="name" class="form-control" placeholder="Họ và tên" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="tel" name="phone" class="form-control" placeholder="Số điện thoại" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn submit-btn w-100">Đăng ký</button>
+                                </div>
+                                
+                                <!-- Thêm trường ẩn để xác định nguồn -->
+                                <input type="hidden" name="source" value="Generali Recruitment Landing Page">
+                                <input type="hidden" name="date" value="<?php echo date('Y-m-d H:i:s'); ?>">
+                            </form>
+                            
+                            <!-- Form dự phòng sử dụng JavaScript nếu FormSubmit không hoạt động -->
+                            <div id="form-messages" class="mt-3 text-center" style="display: none;">
+                                <div class="alert alert-success">Đăng ký thành công! Chúng tôi sẽ liên hệ với bạn sớm.</div>
+                                <div class="alert alert-danger" style="display: none;">Đã xảy ra lỗi. Vui lòng thử lại sau.</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Hình ảnh trang trí -->
+                        <img src="./assets/images/img_paperplanepng.png" alt="Paper Plane" class="paper-plane" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal Popup for Application Requirements -->
+    <div class="modal-overlay" id="applicationModal">
+        <div class="modal-container">
+            <div class="modal-close">&times;</div>
+            <div class="ct ct-ungtuyen">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <img src="./assets/images/img-popup.png" alt="Điều kiện ứng tuyển" class="img-fluid">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="copy">
+                            <h2>Điều kiện ứng tuyển</h2>
+                            <p>Tuổi từ 23 – 35</p>
+                            <p>Tốt nghiệp Trung học phổ thông trở lên</p>
+                            <p>Có kinh nghiệm trong ngành, tài chính, bất động sản, ngân hàng, chứng khoán....</p>
+                            <p>Kỹ năng: Giao tiếp chuyên nghiệp, có khả năng trình bày rõ ràng</p>
+                            <p>Mang trong mình Nhân tố E: Enthusiastic (Nhiệt huyết); Energetic (Năng động); Electronic (Tiên phong về công nghệ); Earnest (Tận tâm); Exceptional (Khác biệt)</p>
+                            <p>Tư duy hiện đại, dám tự tin khẳng định mình trong lĩnh vực đầy thử thách</p>
+                            <p>Mong muốn có một mức thu nhập hấp dẫn &amp; thích du lịch khám phá thế giới</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Khởi tạo AOS Animation
+        AOS.init({
+            duration: 1000,    // Thời gian mặc định cho animation
+            easing: 'ease-in-out', // Kiểu chuyển động
+            once: true,        // Animation chỉ xảy ra một lần
+            mirror: false,     // Phần tử không animate lại khi scroll lên
+            anchorPlacement: 'top-bottom', // Vị trí kích hoạt animation
+            disable: 'mobile' // Tắt animation trên thiết bị di động để tăng hiệu suất
+        });
+        
+        // Hàm định dạng ngày tháng để thêm vào form (thay thế cho PHP)
+        function getCurrentDateTime() {
+            const now = new Date();
+            return now.getFullYear() + '-' + 
+                   String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+                   String(now.getDate()).padStart(2, '0') + ' ' + 
+                   String(now.getHours()).padStart(2, '0') + ':' + 
+                   String(now.getMinutes()).padStart(2, '0') + ':' + 
+                   String(now.getSeconds()).padStart(2, '0');
+        }
+        
+        // Form submission handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Thiết lập ngày giờ hiện tại cho input hidden date
+            const dateInput = document.querySelector('input[name="date"]');
+            if (dateInput) {
+                dateInput.value = getCurrentDateTime();
+            }
+            
+            // Xử lý hiển thị sticky header khi cuộn
+            const stickyHeader = document.querySelector('.sticky-header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            // Form submission với AJAX hoặc FormSubmit
+            const contactForm = document.querySelector('.contact-form form');
+            const formMessages = document.getElementById('form-messages');
+            
+            if (formMessages) {
+                const successAlert = formMessages.querySelector('.alert-success');
+                const errorAlert = formMessages.querySelector('.alert-danger');
+                
+                // Xử lý form submission
+                contactForm.addEventListener('submit', function(e) {
+                    // Kiểm tra nếu muốn xử lý bằng AJAX
+                    if (false) { // Đặt thành true để kích hoạt AJAX thay vì chuyển trang
+                        e.preventDefault();
+                        
+                        // Cập nhật ngày giờ hiện tại
+                        const dateInput = contactForm.querySelector('input[name="date"]');
+                        if (dateInput) {
+                            dateInput.value = getCurrentDateTime();
+                        }
+                        
+                        const formData = new FormData(contactForm);
+                        
+                        // Thêm loading indicator
+                        const submitBtn = contactForm.querySelector('.submit-btn');
+                        const originalBtnText = submitBtn.innerHTML;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+                        submitBtn.disabled = true;
+                        
+                        fetch('https://formsubmit.co/ajax/hcm8.hanwhalife@gmail.com', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            // Hiển thị thông báo thành công
+                            formMessages.style.display = 'block';
+                            successAlert.style.display = 'block';
+                            errorAlert.style.display = 'none';
+                            
+                            // Reset form
+                            contactForm.reset();
+                            
+                            // Khôi phục nút submit
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                            
+                            // Ẩn thông báo sau 5 giây
+                            setTimeout(() => {
+                                formMessages.style.display = 'none';
+                            }, 5000);
+                        })
+                        .catch(error => {
+                            // Hiển thị thông báo lỗi
+                            formMessages.style.display = 'block';
+                            successAlert.style.display = 'none';
+                            errorAlert.style.display = 'block';
+                            errorAlert.textContent = 'Đã xảy ra lỗi: ' + error.message;
+                            console.error('Lỗi:', error);
+                            
+                            // Khôi phục nút submit
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.disabled = false;
+                            
+                            // Ẩn thông báo sau 5 giây
+                            setTimeout(() => {
+                                formMessages.style.display = 'none';
+                            }, 5000);
+                        });
+                    } else {
+                        // FormSubmit sẽ tự xử lý form (chuyển trang)
+                        // Có thể bỏ preventDefault() để cho phép form tự submit bình thường
+                        // hoặc hiển thị thông báo trước khi submit
+                        if (confirm('Bạn có chắc chắn muốn gửi thông tin đăng ký?')) {
+                            return true; // Cho phép form submit
+                        } else {
+                            e.preventDefault(); // Ngăn form submit nếu người dùng hủy
+                        }
+                    }
+                });
+            }
+            
+            // Xử lý hiệu ứng scroll
+            window.addEventListener('scroll', function() {
+                // Hiển thị sticky header sau khi cuộn 300px
+                if (window.scrollY > 300) {
+                    stickyHeader.classList.add('visible');
+                } else {
+                    stickyHeader.classList.remove('visible');
+                }
+                
+                // Hiển thị nút back-to-top sau khi cuộn 500px
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Xử lý parallax effect nhẹ cho một số phần tử (nếu có)
+                const parallaxElements = document.querySelectorAll('.parallax-element');
+                parallaxElements.forEach(element => {
+                    const speed = element.getAttribute('data-speed') || 0.2;
+                    const yPos = -(window.scrollY * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+            
+            // Xử lý click nút back-to-top
+            backToTop.addEventListener('click', function() {
+                // Cuộn mượt lên đầu trang
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Enhancement for experience items on hover
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+                    
+                    // Thêm hiệu ứng xoay nhẹ cho icon
+                    const icon = this.querySelector('.experience-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(10deg) scale(1.1)';
+                        icon.style.transition = 'transform 0.5s ease';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
+                    
+                    // Khôi phục icon
+                    const icon = this.querySelector('.experience-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(0deg) scale(1)';
+                    }
+                });
+            });
+            
+            // Hiệu ứng tương tự cho benefit cards
+            const benefitCards = document.querySelectorAll('.benefit-card');
+            benefitCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(197, 40, 28, 0.2)';
+                    this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+                    
+                    // Hiệu ứng cho icon
+                    const icon = this.querySelector('.benefit-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(5deg) scale(1.1)';
+                        icon.style.transition = 'transform 0.5s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 0 25px rgba(129, 20, 22, 0.15)';
+                    
+                    // Khôi phục icon
+                    const icon = this.querySelector('.benefit-icon');
+                    if (icon) {
+                        icon.style.transform = 'rotate(0) scale(1)';
+                    }
+                });
+            });
+            
+            // Application button - Show modal popup
+            const applyButton = document.querySelector('.apply-btn');
+            const applicationModal = document.getElementById('applicationModal');
+            const modalClose = document.querySelector('.modal-close');
+            
+            if (applyButton && applicationModal) {
+                applyButton.addEventListener('click', function() {
+                    applicationModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                    
+                    // Thêm hiệu ứng mờ dần
+                    setTimeout(() => {
+                        const modalContainer = applicationModal.querySelector('.modal-container');
+                        if (modalContainer) {
+                            modalContainer.style.opacity = '1';
+                            modalContainer.style.transform = 'translateY(0)';
+                        }
+                    }, 50);
+                });
+                
+                if (modalClose) {
+                    modalClose.addEventListener('click', function() {
+                        closeModal();
+                    });
+                }
+                
+                // Close modal when clicking outside the modal content
+                applicationModal.addEventListener('click', function(e) {
+                    if (e.target === applicationModal) {
+                        closeModal();
+                    }
+                });
+                
+                // Close modal with ESC key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && applicationModal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+                
+                // Hàm đóng modal với hiệu ứng
+                function closeModal() {
+                    const modalContainer = applicationModal.querySelector('.modal-container');
+                    if (modalContainer) {
+                        modalContainer.style.opacity = '0';
+                        modalContainer.style.transform = 'translateY(-30px)';
+                    }
+                    
+                    // Delay trước khi ẩn modal hoàn toàn
+                    setTimeout(() => {
+                        applicationModal.classList.remove('active');
+                        document.body.style.overflow = 'auto'; // Re-enable scrolling
+                    }, 300);
+                }
+            }
+            
+            // Tạo hiệu ứng smooth scroll cho tất cả internal links
+            const internalLinks = document.querySelectorAll('a[href^="#"]');
+            internalLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100, // Offset để không bị che bởi header
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Thêm lazy loading cho hình ảnh (nếu trình duyệt không hỗ trợ native lazy loading)
+            if ('loading' in HTMLImageElement.prototype) {
+                // Trình duyệt hỗ trợ native lazy loading
+                const images = document.querySelectorAll('img[data-src]');
+                images.forEach(img => {
+                    img.setAttribute('loading', 'lazy');
+                    img.setAttribute('src', img.getAttribute('data-src'));
+                });
+            } else {
+                // Fallback cho trình duyệt không hỗ trợ
+                const lazyLoadImages = function() {
+                    const lazyImages = document.querySelectorAll('img[data-src]');
+                    const scrollTop = window.scrollY;
+                    
+                    lazyImages.forEach(img => {
+                        if (img.offsetTop < window.innerHeight + scrollTop + 500) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                    });
+                    
+                    if (lazyImages.length === 0) {
+                        document.removeEventListener('scroll', lazyLoadImages);
+                    }
+                };
+                
+                document.addEventListener('scroll', lazyLoadImages);
+                document.addEventListener('resize', lazyLoadImages);
+                lazyLoadImages(); // Gọi ngay để load ảnh hiển thị ngay từ đầu
+            }
+        });
+    </script>
+    </body>
+    </html>
